@@ -1,0 +1,212 @@
+/* 
+    2 lazy to host it myself
+*/
+@import 'https://cdn.jsdelivr.net/npm/hiq@4.1.4/dist/hiq.min.css';
+@import 'https://necolas.github.io/normalize.css/8.0.1/normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Orelega+One&display=swap');
+
+/*
+    Config de HiQ
+*/
+:root {
+    --hiq-base-font-family:
+        /* Safari for OS X and iOS (San Francisco) */
+        -apple-system,
+        /* Chrome < 56 for OS X (San Francisco) */
+        BlinkMacSystemFont,
+        /* Windows */
+        'Segoe UI',
+        /* Android */
+        'Roboto',
+        /* Basic web fallback */
+        'Helvetica Neue', Arial, sans-serif;
+
+    --footer-size: 5vh;
+}
+
+
+/* ==== Header Section ==== */
+div.elte_lilheader {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    font-family: monospace !important;
+    font-size: large;
+    padding-top: 5px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 10px;
+    background: rgb(204,204,204);
+    background: linear-gradient(180deg, rgba(204,204,204,1) 0%, rgba(245,245,245,0) 35%);  
+    display: flex;
+    z-index: 10;
+}
+
+/* Site map system */
+div.elte_lilheader .text {
+    text-align: left;
+    margin-right: 0;
+    flex: 1;
+    -ms-flex: 1;
+}
+/* Links */
+div.elte_lilheader div.links {
+    text-align: right;
+    flex: 1;
+    -ms-flex: 1;
+}
+/* Instagram */
+div.elte_lilheader div.links a.ig {
+    background: rgb(182,95,3);
+    background: linear-gradient(355deg, rgba(182,95,3,1) 0%, rgba(213,96,129,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* Github */
+div.elte_lilheader div.links a.gh {
+    background: rgb(31, 4, 75);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ==== Hero code ==== */
+/* Da moving background */
+@keyframes moving_background {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 32px;
+    }
+}
+
+/* The main hero container */
+div.hero {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: calc(100% - var(--footer-size));
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+/* Animated Background Host */
+div.hero::before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    background-image: url("../img/tile_background.png");
+    height: 100%;
+    width: 100%;
+    opacity: 0.3;
+
+    /* Animation-related crap */
+    animation-name: moving_background;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+/* ==== FlashyBox ==== */
+/* The main flashy animated box */
+div.hero div.flashy-box {
+    background-color: white;
+    color: rgb(83, 83, 83);
+    border-radius: 5px;
+    max-width: 500px;
+    width: 90vw;
+    min-height: 60vh;
+    /* Animation-related crap */
+    box-shadow:0 0 1rem rgb(83, 83, 83);
+}
+
+/* == Sub-Layout == */
+/* Top Background */
+div.hero div.flashy-box div.top {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    border-radius: inherit;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background: rgb(3,121,182);
+    background: linear-gradient(347deg, rgba(3,121,182,1) 0%, rgba(96,122,213,1) 100%);
+    text-align: center;
+    font-size: 5vh;
+    font-family: 'Orelega One', sans-serif;
+    color: white;
+}
+
+/* Body */
+div.hero div.flashy-box div.body {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Top Text */
+div.hero div.flashy-box .header {
+    margin-top: 25px;
+    color: rgb(83, 83, 83);
+    text-align: center;
+    font-size: x-large;
+}
+
+/* SubTop Text */
+div.hero div.flashy-box .big {
+    color: rgb(83, 83, 83);
+    text-align: center;
+    font-size: large;
+    margin-bottom: 5px;
+}
+
+/* Discrete Text */
+div.hero div.flashy-box .discrete {
+    color: rgb(83, 83, 83);
+    text-align: center;
+    font-size: small;
+    font-style: italic;
+}
+
+
+/* Card */
+div.hero div.flashy-box .card {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    animation-duration: 0.5s;
+    box-shadow:0 0 0.5rem rgb(83, 83, 83);
+}
+
+div.hero div.flashy-box .card:hover {
+    box-shadow:0 0 1rem rgb(83, 83, 83);
+}
+
+
+/* === Footer code === */
+/* Footer Host */
+div.footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    height: var(--footer-size);
+    align-items: center;
+    justify-content: center;
+}
+
+/* Footer Entry */
+div.footer .child {
+    color: gray;
+    font-style: italic;
+    text-align: center;
+    flex: 1;
+    -ms-flex: 1;
+}
